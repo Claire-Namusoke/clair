@@ -52,37 +52,138 @@ create table Sales1(
 INSERT INTO Advance(Employeeid, EmployeeName, amount, NetCommissionPayment, [Check]) 
 VALUES( 119,'Zurah',112000, 112000,283200);
 
-
-INSERT INTO DailyCommission1(Id,[Date], Employeeid, EmployeeName, Commission)
+use AfroCoutureNaturalSalon
+INSERT INTO dbo.DailyCommission1(Id,[Date], Employeeid, EmployeeName, Commission)
 VALUES
-(594,'2024-12-01', 119, 'Zurah',0),
-(595,'2024-12-02', 119, 'Zurah',0),
-(596,'2024-12-03', 119, 'Zurah',0),
-(597,'2024-12-04', 119, 'Zurah',22000),
-(598,'2024-12-05', 119, 'Zurah',19500),
-(599,'2024-12-06', 119, 'Zurah',19000),
-(600,'2024-12-07', 119, 'Zurah',9500),
-(601,'2024-12-08', 119, 'Zurah',0),
-(602,'2024-12-09', 119, 'Zurah',0),
-(603,'2024-12-10', 119, 'Zurah',17500),
-(604,'2024-12-11', 119, 'Zurah',0),
-(605,'2024-12-12', 119, 'Zurah',117000),
-(606,'2024-12-13', 119, 'Zurah',21000),
-(607,'2024-12-14', 119, 'Zurah',24000),
-(608,'2024-12-15', 119, 'Zurah',0),
-(609,'2024-12-16', 119, 'Zurah',0),
-(610,'2024-12-17', 119, 'Zurah',25000),
-(611,'2024-12-18', 119, 'Zurah',16500),
-(612,'2024-12-19', 119, 'Zurah',0),
-(613,'2024-12-20', 119, 'Zurah',26500),
-(614,'2024-12-21', 119, 'Zurah',30500),
-(615,'2024-12-22', 119, 'Zurah',28000),
-(616,'2024-12-23', 119, 'Zurah',50000),
-(617,'2024-12-24', 119, 'Zurah',19000),
-(618,'2024-12-25', 119, 'Zurah',0),
-(619,'2024-12-26', 119, 'Zurah',0),
-(620,'2024-12-27', 119, 'Zurah',22500),
-(621,'2024-12-28', 119, 'Zurah',0),
-(622,'2024-12-29', 119, 'Zurah',0),
-(623,'2024-12-30', 119, 'Zurah',23000),
-(624,'2024-12-31', 119, 'Zurah',10000);
+(625,'2024-12-01', 114, 'Samantha',17000),
+(626,'2024-12-02', 114, 'Samantha',25500),
+(627,'2024-12-03', 114, 'Samantha',7000),
+(628,'2024-12-04', 114, 'Samantha',0),
+(629,'2024-12-05', 114, 'Samantha',8000),
+(630,'2024-12-06', 114, 'Samantha',18000),
+(631,'2024-12-07', 114, 'Samantha',7000),
+(632,'2024-12-08', 114, 'Samantha',31000),
+(633,'2024-12-09', 114, 'Samantha',18500),
+(634,'2024-12-10', 114, 'Samantha',17500),
+(635,'2024-12-11', 114, 'Samantha',0),
+(636,'2024-12-12', 114, 'Samantha',13000),
+(637,'2024-12-13', 114, 'Samantha',29000),
+(638,'2024-12-14', 114, 'Samantha',27000),
+(639,'2024-12-15', 114, 'Samantha',27000),
+(640,'2024-12-16', 114, 'Samantha',25000),
+(641,'2024-12-17', 114, 'Samantha',17000),
+(642,'2024-12-18', 114, 'Samantha',14500),
+(643,'2024-12-19', 114, 'Samantha',23500),
+(644,'2024-12-20', 114, 'Samantha',31000),
+(645,'2024-12-21', 114, 'Samantha',46000),
+(646,'2024-12-22', 114, 'Samantha',19000),
+(647,'2024-12-23', 114, 'Samantha',40500),
+(648,'2024-12-24', 114, 'Samantha',36500),
+(649,'2024-12-25', 114, 'Samantha',0),
+(650,'2024-12-26', 114, 'Samantha',0),
+(651,'2024-12-27', 114, 'Samantha',0),
+(652,'2024-12-28', 114, 'Samantha',24500),
+(653,'2024-12-29', 114, 'Samantha',0),
+(654,'2024-12-30', 114, 'Samantha',50500),
+(655,'2024-12-31', 114, 'Samantha',0);
+
+SELECT Commission, [Date],Id
+FROM [AfroCoutureNaturalSalon].[dbo].[DailyCommission1] 
+WHERE EmployeeName = 'Zurah';
+
+SELECT SUM(Commission) AS TotalCommission
+FROM [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
+WHERE EmployeeName = 'Zurah';
+
+delete from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1] 
+ WHERE Id IN (118, 119, 120);
+
+ Delete from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1] 
+ WHERE EmployeeName = 'Samantha';
+
+ update [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
+ set Commission = 11700
+ where Id = 605;
+
+ select 'Total'as  [Employee Name], sum(Commission)
+  as [Total Commission] from [AfroCoutureNaturalSalon].[dbo].
+   [DailyCommission1] union all select EmployeeName, sum(Commission)
+    as TotalCommission from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
+     group by EmployeeName;
+
+     Delete  from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
+     where EmployeeName = 'Samatha';
+
+    select * from (
+        select EmployeeName as [Employee Name],
+            sum(Commission) as [Total Commission]
+        from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
+        group by EmployeeName
+        union all 
+        select 'Total' as [Employee Name], sum(Commission) as TotalCommission
+        from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
+    ) as CombinedResults
+    order by 
+          case when [Employee Name] = 'Total' then 1 else 0 end,
+          [Employee Name];
+      
+     select EmployeeName as [Employee Name],
+      sum(Commission) as [Total Commission]
+        from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
+        group by EmployeeName
+        union all 
+        select 'Total' as EmployeeName, sum(Commission) as TotalCommission
+        from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
+        order by EmployeeName;
+
+
+        select 'Total' as EmployeeName, sum(Commission) as TotalCommission, 1 as sortorder
+        from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
+        order by EmployeeName;
+
+        ALTER TABLE OperationalCosts1
+        ALTER COLUMN ExpenseDetails VARCHAR(50);
+
+        ALTER TABLE OperationalCosts1
+        ALTER COLUMN Checked VARCHAR(5);
+
+        ALTER TABLE OperationalCosts1
+        DROP COLUMN Balance;
+
+update OperationalCosts1 
+set [Date] = '2024-12-01' where Id = 5;
+
+        
+
+        INSERT INTO OperationalCosts1(Id, [Date], Item,
+         ExpenseDetails, Category,
+          ModeOfPayment, Amount, 
+         ClearedExpenses, Debit, 
+          Checked) VALUES
+
+         (15, '2024-12-02', 'Loan payment',
+          'Loan payment', 'Variable-other',
+          'Cash',696000,null,696000,'OK'),
+
+            (16, '2024-12-04', 'Products general',
+            'Moulding gel', 'Variable-operations',
+            'Cash',291000, null,291000,'OK'),
+
+            (17, '2024-12-04', 'Products general',
+            'Store purchase', 'Variable-operations',
+            'Bank',379000,null,379000,'OK'),
+
+            (18, '2024-12-04', 'Transport',
+            'Transport for banking', 'Variable-operations',
+            'Bank',5000,null,5000,'OK'),
+
+            (19, '2024-12-04', 'Transport',
+            'Transport store purchase', 'Variable-operations',
+            'Bank',16000,null,16000,'OK'),
+
+            (20, '2024-12-04', 'Equipment & tools',
+            'Receipt rolls', 'Variable-other',
+            'Cash',50000,null,50000,'OK');
+
+
+
