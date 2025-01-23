@@ -153,37 +153,63 @@ delete from [AfroCoutureNaturalSalon].[dbo].[DailyCommission1]
 update OperationalCosts1 
 set [Date] = '2024-12-01' where Id = 5;
 
-        
+        use AfroCoutureNaturalSalon
+        go
 
         INSERT INTO OperationalCosts1(Id, [Date], Item,
-         ExpenseDetails, Category,
+         ExpenseDetails, 
           ModeOfPayment, Amount, 
          ClearedExpenses, Debit, 
           Checked) VALUES
 
-         (15, '2024-12-02', 'Loan payment',
-          'Loan payment', 'Variable-other',
-          'Cash',696000,null,696000,'OK'),
+         (210, '2024-12-24', 'salaries general',
+          'CEO salary advance', 'Cash', 40000, null, 40000, 'OK');
+           
 
-            (16, '2024-12-04', 'Products general',
-            'Moulding gel', 'Variable-operations',
-            'Cash',291000, null,291000,'OK'),
+            (202, '2024-12-31', 'Products Hanne',
+            'Store purchase', 'Variable Hanne',
+            'Cash',44000, null,44000,'OK'),
 
-            (17, '2024-12-04', 'Products general',
-            'Store purchase', 'Variable-operations',
-            'Bank',379000,null,379000,'OK'),
+            (203, '2024-12-31','Salaries general', 
+            'Beth salary advance', 'Salaries salon',
+            'Cash',50000 ,null,50000,'OK');
 
-            (18, '2024-12-04', 'Transport',
-            'Transport for banking', 'Variable-operations',
-            'Bank',5000,null,5000,'OK'),
-
-            (19, '2024-12-04', 'Transport',
-            'Transport store purchase', 'Variable-operations',
-            'Bank',16000,null,16000,'OK'),
-
-            (20, '2024-12-04', 'Equipment & tools',
-            'Receipt rolls', 'Variable-other',
-            'Cash',50000,null,50000,'OK');
+            
 
 
+update OperationalCosts1 
+SET ExpenseDetails = 'Water bill (Nov-Dec)' 
+where id = 187;
 
+ALTER TABLE [AfroCoutureNaturalSalon].[dbo].[Sales1]
+DROP COLUMN [OtherAdjustment];
+
+select * from [AfroCoutureNaturalSalon].
+[dbo].[OperationalCosts1] where [Date] = '2024-12-31';
+
+ALTER TABLE Sales1
+ADD ServiceId int;
+
+ALTER TABLE Sales1
+ADD CONSTRAINT FK_Sales1_ServiceDetails
+FOREIGN KEY (ServiceId) REFERENCES ServiceDetails(ServiceId);
+
+ALTER TABLE Sales1
+DROP COLUMN [Commission];
+
+ALTER TABLE Sales1
+DROP COLUMN Product;
+
+
+ALTER TABLE Sales1
+ADD CONSTRAINT FK_Sales1_ServiceDetails
+FOREIGN KEY (ServiceId) REFERENCES ServiceDetails(ServiceId);
+create table ServiceDetails(
+    ServiceId int primary key,
+     ProductName varchar(50)  null,
+     [Service] varchar(50)  null,
+    Price int not null,
+    Amount int not null,
+    Commission int  null,
+    
+);
