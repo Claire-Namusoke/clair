@@ -197,8 +197,10 @@ FOREIGN KEY (ServiceId) REFERENCES ServiceDetails(ServiceId);
 ALTER TABLE Sales1
 DROP COLUMN [Commission];
 
-ALTER TABLE Sales1
-DROP COLUMN Product;
+use AfroCoutureNaturalSalon
+go
+ALTER TABLE ServiceDetails
+DROP COLUMN Amount;
 
 
 ALTER TABLE Sales1
@@ -211,5 +213,32 @@ create table ServiceDetails(
     Price int not null,
     Amount int not null,
     Commission int  null,
-    
-);
+    );
+    CREATE UNIQUE INDEX idx_unique_Service
+    ON ServiceDetails([Service]);
+
+    DROP INDEX idx_unique_ProductName_Service ON ServiceDetails;
+
+    CREATE UNIQUE INDEX idx_unique_ProductName_Service
+    ON ServiceDetails(ProductName, [Service]);
+
+INSERT INTO ServiceDetails(ServiceId, ProductName,
+[Service], Price, Commission) VALUES
+(465,null,'Knotless Goddess Braids Short',120000,32000),
+(470,null,'Knotless Braids Ezy',140000,40000),
+(475,null,'Black Henna',20000,2000),
+(480,null,'Bridal Deposit Two',100000,null),
+(485,'Hanne Cocoa Butter','Butter',15000,null),
+(490,null,'Bantu Knotts',70000,8000),
+(500,null,'Twists and Twistsouts',45000,12000),
+(510,null,'Styling Ext xl',100000,20000),
+(515,null, 'Styling XL',30000,8000),
+(520,'Beads','Beads',10000,null),
+(525,null,'Micro Locs Own Hair', 200000,50000),
+(530,null,'Feed in Conrows',70000,15000),
+(535,null,'Unplaiting Threes Extension',110000,25000),
+(540,null,'Spring Afro Crotchet',150000,17000),
+(545,null,'Havana Crotchet',120000,17000),
+(550,null,'Butterfly Locs',250000,50000),
+(555,null,'Drawing Eyebrow',10000,4000),
+(560,null,'Havana Braids ',150000,30000);
