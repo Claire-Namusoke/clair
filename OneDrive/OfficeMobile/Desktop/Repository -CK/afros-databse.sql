@@ -242,3 +242,57 @@ INSERT INTO ServiceDetails(ServiceId, ProductName,
 (550,null,'Butterfly Locs',250000,50000),
 (555,null,'Drawing Eyebrow',10000,4000),
 (560,null,'Havana Braids ',150000,30000);
+
+use AfroCoutureNaturalSalon
+GO
+create table ServiceCategory(   Id int ,
+    Category VARCHAR (50) primary key,
+    CategoryId int not null) 
+
+INSERT INTO ServiceCategory(Id, Category, CategoryId) VALUES
+(1,'Accessories', 10),
+(2,'Barber', 20),
+(3,'Braids', 30),
+(4,'Bridal', 40),
+(5,'Crotchets', 50),
+(6,'Hair Care', 60),
+(7,'Locks', 70),
+(8,'Makeup', 80),
+(9,'Pedicure and Manicure', 90),
+(10,'Products-Hanne', 100),
+(11,'Repair', 110),
+(12,'Styles', 120),
+(13,'Unplaiting', 130);
+
+ALTER TABLE Sales1
+ADD CONSTRAINT FK_Sales1_ServiceCategory
+FOREIGN KEY (CategoryByService) REFERENCES ServiceCategory(Category);
+
+insert into Sales1(Id, [Date], EmployeeName, 
+[Sales_Rep], ReceiptNo, CategoryByService,
+ServiceId) values 
+(24, '2024-12-02', 'Agnes', 'Mercy', 241, 'Styles', 85),
+(25, '2024-12-02', 'Debbie', 'Mercy', 242, 'Hair care', 90),
+(26, '2024-12-02', 'Debbie', 'Mercy', 242, 'Styles', 85),
+(27, '2024-12-02', 'Kurthum', 'Mercy', 243, 'Hair care', 95),
+(28, '2024-12-02', 'Kurthum', 'Mercy', 243, 'Hair care', 90),
+(29, '2024-12-02', 'Kurthum', 'Mercy', 243, 'Braids', 100),
+(30, '2024-12-02', 'Jacent', 'Mercy', 244, 'Hair care', 110),
+(31, '2024-12-02', 'Jacent', 'Mercy', 244, 'Styles', 15),
+(32, '2024-12-02', 'Favour', 'Mercy', 245, 'Unplaiting', 10),
+(33, '2024-12-02', 'Favour', 'Mercy', 245, 'Hair care', 90),
+(34, '2024-12-02', 'Peace', 'Mercy', 246, 'Styles', 35),
+(35, '2024-12-02', 'Ruth', 'Mercy', 247, 'Hair care', 25),
+(36, '2024-12-02', 'Ruth', 'Mercy', 247, 'Styles', 115),
+(37, '2024-12-02', 'Samantha', 'Mercy', 248, 'Braids', 120),
+(38, '2024-12-02', 'Bonny', 'Mercy', 249, 'Unplaiting', 10),
+(39, '2024-12-02', 'Tendo', 'Mercy', 249, 'Hair care', 25),
+(40, '2024-12-02', 'Debbie', 'Mercy', 250, 'Hair care', 95),
+(41, '2024-12-02', 'Debbie', 'Mercy', 250, 'Hair care', 90),
+(42, '2024-12-02', 'Debbie', 'Mercy', 250, 'Styles', 85),
+(43, '2024-12-02', 'Agnes', 'Mercy', 251, 'Styles', 125),
+(44, '2024-12-02', 'Jacent', 'Mercy', 252, 'Styles', 130),
+(45, '2024-12-02', 'Bonny', 'Mercy', 253, 'Unplaiting', 10),
+(46, '2024-12-02', 'Ruth', 'Mercy', 253, 'Hair care', 110),
+(47, '2024-12-02', 'Ruth', 'Mercy', 253, 'Styles', 135),
+(48, '2024-12-02', 'Peace', 'Mercy', 254, 'Styles', 85);
