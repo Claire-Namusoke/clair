@@ -273,8 +273,31 @@ GO
 insert into Sales1(Id, [Date], EmployeeName, 
 [Sales_Rep], ReceiptNo, CategoryByService,
 ServiceId) values 
-(345, '2024-12-09', 'Favour', 'Mercy', 429, 'Hair care', 25),
-(346,'2024-12-09','Jacent','Mercy',429,'Styles',570);
+(387, '2024-12-10', 'Angel', 'Mercy', 451, 'Hair Care', 90),
+(388,'2024-12-10','Angel','Mercy',451,'Styles',85),
+(389, '2024-12-10', 'Prossy', 'Mercy', 452, 'Hair Care', 25),
+(390,'2024-12-10','Jacent','Mercy',453,'Hair Care',90);
+
+(371, '2024-12-10', 'Tendo', 'Mercy', 444, 'Hair Care', 90),
+(372,'2024-12-10','Tendo','Mercy',444,'Styles',85),
+(373, '2024-12-10', 'Sanyu', 'Mercy', 445, 'Hair Care', 90),
+(374,'2024-12-10','Sanyu','Mercy',445,'Braids',80),
+(375, '2024-12-10', 'Jacent', 'Mercy', 445, 'Makeup', 20),
+(376,'2024-12-10','Kurthum','Mercy',446,'Hair Care',25),
+(377, '2024-12-10', 'Agnes', 'Mercy', 446, 'Styles', 570),
+(378,'2024-12-10','Agnes','Mercy',447,'Unplaiting',10),
+(379, '2024-12-10', 'Agnes', 'Mercy', 447, 'Hair care', 25),
+(380,'2024-12-10','Agnes','Mercy',447,'Styles',570),
+(381, '2024-12-10', 'Jacent', 'Mercy', 448, 'Hair Care', 70),
+(382,'2024-12-10','Jacent','Mercy',448,'Styles',85),
+(383, '2024-12-10', 'Samantha', 'Mercy', 449, 'Hair care', 90),
+(384,'2024-12-10','Resty','Mercy',450,'Hair Care',90),
+(385, '2024-12-10', 'Angel', 'Mercy', 451, 'Unplaiting', 10),
+(386,'2024-12-10','Angel','Mercy',451,'Hair Care',90);
+
+
+
+
 
 
 
