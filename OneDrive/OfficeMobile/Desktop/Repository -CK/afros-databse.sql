@@ -271,35 +271,46 @@ FOREIGN KEY (CategoryByService) REFERENCES ServiceCategory(Category);
 USE AfroCoutureNaturalSalon
 GO
 insert into Sales1(Id, [Date], EmployeeName, 
-[Sales_Rep], ReceiptNo, CategoryByService,
+[Sales_Rep],  CategoryByService,
 ServiceId) values 
-(511, '2024-12-13', 'Patricia', 'Mercy', 111, 'Hair Care', 25),
-(512,'2024-12-13','Patricia','Mercy',111,'Products-Hanne',340),
-(513, '2024-12-13', 'Patricia', 'Mercy', 111, 'Products-Hanne', 390),
-(514,'2024-12-13','Peace','Mercy',111,'Styles',435),
-(515, '2024-12-13','Mercy', 'Mercy', 111, 'Products-Hanne',40),
-(516,'2024-12-13','Mercy','Mercy',111,'Products-Hanne',575),
-(517, '2024-12-13', 'Mercy', 'Mercy', 111, 'Products-Hanne', 280),
-(518,'2024-12-13','Zurah','Mercy',111,'Hair Care',200),
-(519, '2024-12-13', 'Angel', 'Mercy', 111, 'Braids', 580),
-(520,'2024-12-13','Shakirah','Mercy',111,'Hair Care',25),
-(521, '2024-12-13', 'Tendo', 'Mercy', 111, 'Styles', 410),
-(522,'2024-12-13','Elvis','Mercy',111,'Pedicure and Manicure',375),
-(523, '2024-12-13', 'Favour', 'Mercy', 111, 'Unplaiting', 10),
-(524,'2024-12-13','Samantha','Mercy',111,'Hair Care',90),
-(525, '2024-12-13', 'Favour', 'Mercy', 111, 'Braids', 440),
-(526,'2024-12-13','Jacent','Mercy',111,'Styles',75),
-(527, '2024-12-13', 'Jacent', 'Mercy', 111, 'Styles', 115),
-(528,'2024-12-13','Elvis','Mercy',111,'Pedicure and Manicure',375),
-(529, '2024-12-13', 'Patricia', 'Mercy', 111, 'Hair Care', 95),
-(530,'2024-12-13','Patricia','Mercy',111,'Hair Care',25);
+(1271, '2024-12-30', 'Tendo', 'Mercy',  'Products-Hanne', 175),
+(1272,'2024-12-30','Tendno','Mercy','Makeup',20),
+(1273, '2024-12-31', 'Tendo', 'Mercy', 'Hair Care', 90),
+(1274,'2024-12-31','Tendo','Mercy','Braids',195),
+(1275, '2024-12-31','Debbie', 'Mercy','Hair Care',95),
+(1276,'2024-12-31','Debbie','Mercy','Hair Care',25),
+(1277, '2024-12-31', 'Debbie', 'Mercy','Styles', 85),
+(1278,'2024-12-31','Bonny','Mercy','Unplaiting',65),
+(1279, '2024-12-31', 'Kurthum', 'Mercy','Hair Care', 25),
+(1280,'2024-12-31','Angel','Mercy','Styles',570),
+(1281, '2024-12-31', 'Sharon', 'Mercy','Braids', 195),
+(1282,'2024-12-31','Shakirah','Mercy','Styles',35),
+(1283, '2024-12-31', 'Favour', 'Mercy','Makeup', 20),
+(1284,'2024-12-31','Jacent','Mercy','Braids',320),
+(1285, '2024-12-31', 'Angel', 'Mercy','Styles', 15),
+(1286,'2024-12-31','Ruth','Mercy','Styles',15),
+(1287, '2024-12-31', 'Bonny', 'Mercy', 'Unplaiting', 10),
+(1288,'2024-12-31','Jacent','Mercy','Hair Care',110),
+(1289, '2024-12-31', ' Jacent', 'Mercy', 'Crotchets', 540),
+(1290,'2024-12-31','Prossy','Mercy','Styles',15);
 
 
+use AfroCoutureNaturalSalon
+go
+alter table Sales1
+drop column ReceiptNo
+
+UPDATE Sales1 set EmployeeName='Kurthum' where Id ='1130'
+
+select * FROM Sales1 
+
+insert into ServiceDetails (ServiceId,ProductName,[Service],Price,Commission)
+VALUES (650,null,'Micro Twist Extension',300000,70000)
 
 
+select * from ServiceDetails
 
-
-
+select * from ServiceCategory
 
 
 
