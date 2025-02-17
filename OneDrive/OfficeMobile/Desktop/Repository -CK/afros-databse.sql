@@ -273,26 +273,17 @@ GO
 insert into Sales1(Id, [Date], EmployeeName, 
 [Sales_Rep],  CategoryByService,
 ServiceId) values 
-(1271, '2024-12-30', 'Tendo', 'Mercy',  'Products-Hanne', 175),
-(1272,'2024-12-30','Tendno','Mercy','Makeup',20),
-(1273, '2024-12-31', 'Tendo', 'Mercy', 'Hair Care', 90),
-(1274,'2024-12-31','Tendo','Mercy','Braids',195),
-(1275, '2024-12-31','Debbie', 'Mercy','Hair Care',95),
-(1276,'2024-12-31','Debbie','Mercy','Hair Care',25),
-(1277, '2024-12-31', 'Debbie', 'Mercy','Styles', 85),
-(1278,'2024-12-31','Bonny','Mercy','Unplaiting',65),
-(1279, '2024-12-31', 'Kurthum', 'Mercy','Hair Care', 25),
-(1280,'2024-12-31','Angel','Mercy','Styles',570),
-(1281, '2024-12-31', 'Sharon', 'Mercy','Braids', 195),
-(1282,'2024-12-31','Shakirah','Mercy','Styles',35),
-(1283, '2024-12-31', 'Favour', 'Mercy','Makeup', 20),
-(1284,'2024-12-31','Jacent','Mercy','Braids',320),
-(1285, '2024-12-31', 'Angel', 'Mercy','Styles', 15),
-(1286,'2024-12-31','Ruth','Mercy','Styles',15),
-(1287, '2024-12-31', 'Bonny', 'Mercy', 'Unplaiting', 10),
-(1288,'2024-12-31','Jacent','Mercy','Hair Care',110),
-(1289, '2024-12-31', ' Jacent', 'Mercy', 'Crotchets', 540),
-(1290,'2024-12-31','Prossy','Mercy','Styles',15);
+(1291, '2024-12-31', 'Prossy', 'Mercy',  'Hair Care', 95),
+(1292,'2024-12-31','Ruth','Mercy','Hair Care',95),
+(1293, '2024-12-31', 'Ruth', 'Mercy', 'Hair Care', 90),
+(1294,'2024-12-31','Ruth','Mercy','Braids',350),
+(1295, '2024-12-31','Kurthum', 'Mercy','Braids',225),
+(1296,'2024-12-31','Sharon','Mercy','Styles',35),
+(1297, '2024-12-31', 'Ruth', 'Mercy','Makeup', 20),
+(1298,'2024-12-31','Favour','Mercy','Unplaiting',10),
+(1299, '2024-12-31', 'Favour', 'Mercy','Styles', 60),
+(1300,'2024-12-31','Prossy','Mercy','Styles',300),
+(1301, '2024-12-31', 'Jacent', 'Mercy','Makeup', 20);
 
 
 use AfroCoutureNaturalSalon
@@ -311,6 +302,28 @@ VALUES (650,null,'Micro Twist Extension',300000,70000)
 select * from ServiceDetails
 
 select * from ServiceCategory
+
+SELECT * from Sales1
+
+--checking data
+use AfroCoutureNaturalSalon
+go
+select * from Sales1 where [Date] ='2024-12-10'
+select * from ServiceDetails
+
+update Sales1 
+set ServiceId ='65' where Id ='347'
+
+UPDATE Sales1
+set EmployeeName ='Jacent' where Id ='351'
+
+update Sales1
+set EmployeeName ='Bonny' where Id ='355'
+
+delete from Sales1
+ where Id ='387'
+
+
 
 
 
