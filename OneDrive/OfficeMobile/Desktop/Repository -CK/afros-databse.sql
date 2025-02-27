@@ -222,6 +222,8 @@ create table ServiceDetails(
     CREATE UNIQUE INDEX idx_unique_ProductName_Service
     ON ServiceDetails(ProductName, [Service]);
 
+
+
 INSERT INTO ServiceDetails(ServiceId, ProductName,
 [Service], Price, Commission) VALUES
 (465,null,'Knotless Goddess Braids Short',120000,32000),
@@ -298,30 +300,67 @@ select * FROM Sales1
 insert into ServiceDetails (ServiceId,ProductName,[Service],Price,Commission)
 VALUES (650,null,'Micro Twist Extension',300000,70000)
 
-
+use AfroCoutureNaturalSalon
+go
 select * from ServiceDetails
 
 select * from ServiceCategory
 
-SELECT * from Sales1
+SELECT * from Sales1 where ServiceId = 595
 
 --checking data
 use AfroCoutureNaturalSalon
 go
-select * from Sales1 where [Date] ='2024-12-10'
-select * from ServiceDetails
-
+select * from Sales1 where [Date] ='2024-12-31'
+select * from Sales1
+ where ServiceId =120
 update Sales1 
-set ServiceId ='65' where Id ='347'
-
+set ServiceId ='25' where Id ='493'
 UPDATE Sales1
-set EmployeeName ='Jacent' where Id ='351'
+set ServiceId ='35' where Id ='502'
+
 
 update Sales1
 set EmployeeName ='Bonny' where Id ='355'
 
 delete from Sales1
  where Id ='387'
+
+
+
+UPDATE ServiceDetails
+SET Commission = 3000
+WHERE ServiceId = 415
+ 
+ UPDATE ServiceDetails
+ SET Commission =40000
+ where ServiceId =315
+
+ UPDATE ServiceDetails
+ SET Commission =12000
+ where ServiceId =250
+
+ UPDATE ServiceDetails
+ SET Commission =10000
+ where ServiceId =355
+
+ UPDATE ServiceDetails
+ SET Commission =7500
+ where ServiceId =65
+
+ UPDATE ServiceDetails
+ SET Commission =2500
+ where ServiceId =385
+
+ UPDATE ServiceDetails
+ SET Commission =2000
+ where ServiceId =200
+
+ UPDATE ServiceDetails
+ SET Commission =4000
+ where ServiceId =110
+
+
 
 
 
