@@ -360,10 +360,21 @@ WHERE ServiceId = 415
  SET Commission =4000
  where ServiceId =110
 
+USE AfroCoutureNaturalSalon
+SELECT s1.*, sd.ProductName, sd.[Service], sd.Price, sd.Commission
+FROM Sales1 s1
+FULL JOIN ServiceDetails sd ON s1.ServiceId = sd.ServiceId
+GROUP BY s1.Id, s1.[Date], s1.EmployeeName, s1.[Sales_Rep], s1.CategoryByService, s1.ServiceId, sd.ProductName, sd.[Service], sd.Price, sd.Commission
+
+SELECT SUM(sd.Commission) AS TotalCommission
+FROM Sales1 s1
+JOIN ServiceDetails sd ON s1.ServiceId = sd.ServiceId
+
+WHERE s1.[Date] = '2024-12-02';
+
+select * from Sales1 where  EmployeeName ='Mercy'
 
 
-
-
-
-
-
+select EmployeeId, EmployeeName, sum(Commission) as TotalCommission
+from DailyCommission1
+group by EmployeeId, EmployeeName
