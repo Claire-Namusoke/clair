@@ -420,3 +420,30 @@ insert into ClientCount ([Date], DayOfTheWeek, ClientCount)
 ('2024-12-31', 31,17);
 
 
+use AfroCoutureNaturalSalon
+go
+create table Products (ServiceId INT PRIMARY KEY,
+Product varchar (50),
+Price int,
+Commission int)
+
+insert into Products (ServiceId,
+Product ,
+Price ,
+Commission ) values 
+(430,'Hanne Ayuvedic Hair Booster',40000,1000),
+(240,'Hanne Biotin Serum',40000,1000),
+(290,'Hanne Castor Oil',30000,1000),
+(485,'Hanne Cocoa Butter',15000,1000),
+(340,'Hanne Coconut Oil',20000,1000),
+(365,'Hanne Detangling Spray',30000,1000),
+(575,'Hanne Follicle Stimulator',50000,1000),
+(390,'Hanne Herbal Oil Mixture',20000,1000),
+(40,'Hanne Leave in Condition',30000,1000),
+(175,'Hanne Mint Shea Butter',20000,500),
+(280,'Hanne Rice Oil',25000,1000),
+(600,'Hanne Shampoo',30000,1000),
+(650,'Hanne Deep Treatment',40000,1000),
+(700,'Combs',8000,1000),
+(750,'Spray Bottles',7000,1000);
+
